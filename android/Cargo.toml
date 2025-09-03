@@ -1,0 +1,17 @@
+[package]
+authors.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+name = "app-template-android"
+version.workspace = true
+
+[lib]
+# Compile a dynamic "C" library that is called by Android's NativeActivity.
+crate-type = ["cdylib"]
+
+[target.'cfg(target_os = "android")'.dependencies]
+app-template = { path = ".." }
+
+[features]
+pre_cooked_assets = ["app-template/pre_cooked_assets"]

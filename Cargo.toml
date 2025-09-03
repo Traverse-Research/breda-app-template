@@ -1,0 +1,23 @@
+[package]
+authors.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+name = "app-template"
+version.workspace = true
+
+[dependencies]
+breda-app-support.workspace = true
+breda = { workspace = true, features = ["runtime_only_current_platform"] }
+
+anyhow.workspace = true
+clap.workspace = true
+
+[target.'cfg(target_os = "android")'.dependencies]
+android-activity.workspace = true
+
+[build-dependencies]
+breda-build.workspace = true
+
+[features]
+pre_cooked_assets = ["breda/pre_cooked_assets"]
