@@ -6,7 +6,7 @@ license = "LicenseRef-Traverse-Proprietary"
 name = "app-template"
 version = "0.1.0"
 
-[workspace]
+[dependencies]
 
 [features]
 pre_cooked_assets = ["breda/pre_cooked_assets"]
