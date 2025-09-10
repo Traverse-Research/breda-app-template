@@ -1,6 +1,6 @@
 #![cfg(target_os = "android")]
 
-use {{ template_code_id }}::*;
+use app_template::*;
 
 #[no_mangle]
 fn android_main(app: AndroidApp) {

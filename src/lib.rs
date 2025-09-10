@@ -1,3 +1,15 @@
+//! # App-template
+//!
+//! This crate serves as an application template for other apps. Like `inline-example`,
+//! it features an inline raytracing example, but with the following differences:
+//!
+//! * It uses the breda streaming system
+//! * It uses a pipeline defined in [`./breda.yaml`]
+//! * It sets up a render graph for rendering
+//!
+//! Copy and paste this create to `apps/<your_app_name>` and make sure to rename any references to
+//! `app-template` or `app_template`.
+
 use std::sync::Arc;
 
 // Re-export or Android
@@ -66,7 +78,7 @@ pub fn internal_main(
     #[cfg(target_os = "android")] android_app: AndroidApp,
 ) -> Result<()> {
     let mut breda = breda::Breda::new(
-        "{{ template_name }}",
+        "App Template",
         opts.breda.into(),
         #[cfg(target_os = "android")]
         android_app,
@@ -81,7 +93,7 @@ pub fn internal_main(
 
     breda.render_loop().run_closure(
         opts.window.into_desc(
-            "{{ template_name }}",
+            "App Template",
             breda::renderer::SwapchainColorMode::ForceSrgb8Bit,
             true,
         ),
@@ -224,7 +236,7 @@ pub fn internal_main(
                 let present_image_rg = render_graph.import_texture(&present_image);
 
                 let tlas = render_graph.import_tlas(&acceleration_structure);
-                let pipeline = shader_db.get_pipeline("{{ template_id }}-raytracer");
+                let pipeline = shader_db.get_pipeline("app-template-raytracer");
                 RasterPass::new("Main pass", &mut render_graph)
                     .render_target(&present_image_rg, LoadOp::Discard, StoreOp::Store)
                     .tlas(&tlas)

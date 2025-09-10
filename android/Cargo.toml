@@ -3,7 +3,7 @@ authors.workspace = true
 edition.workspace = true
 homepage.workspace = true
 license.workspace = true
-name = "{{ template_name }}-android"
+name = "app-template-android"
 version.workspace = true
 
 [lib]
@@ -11,7 +11,7 @@ version.workspace = true
 crate-type = ["cdylib"]
 
 [target.'cfg(target_os = "android")'.dependencies]
-{{ template_id }} = { path = ".." }
+app-template = { path = ".." }
 
 [features]
-pre_cooked_assets = ["{{ template_id }}/pre_cooked_assets"]
+pre_cooked_assets = ["app-template/pre_cooked_assets"]

@@ -1,6 +1,6 @@
-use {{ template_code_id }}::CommandlineOpts;
+use app_template::CommandlineOpts;
 use clap::Parser;
 
 fn main() -> anyhow::Result<()> {
-    {{ template_code_id }}::internal_main(&CommandlineOpts::parse())
+    app_template::internal_main(&CommandlineOpts::parse())
 }
