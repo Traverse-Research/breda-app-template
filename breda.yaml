@@ -7,7 +7,7 @@ x-default-blend-state: &default-blend-state
     op_alpha: Add
     enable: false
 
-x-app-template-depth-state: &app-template-depth-state
+x-{{ template_id }}-depth-state: &{{ template_id }}-depth-state
     depth_test_enable: false
     depth_write_enable: false
     depth_func: Always
@@ -15,23 +15,23 @@ x-app-template-depth-state: &app-template-depth-state
     slope_scaled_depth_bias: 0.0
     depth_clamp: false
 
-x-app-template-render-state: &app-template-render-state
+x-{{ template_id }}-render-state: &{{ template_id }}-render-state
     blend_states: [*default-blend-state]
     cull_mode: None
     conservative_raster: Disabled
-    depth: *app-template-depth-state
+    depth: *{{ template_id }}-depth-state
 
 raster:
-    app-template-raytracer:
+    {{ template_id }}-raytracer:
         vs:
             filename: "breda-gpu-shared::fullscreen_quad.vs.hlsl"
             entry_point: "main"
         ps:
-            filename: "app-template::main.ps.hlsl"
+            filename: "{{ template_id }}::main.ps.hlsl"
             entry_point: "main"
         primitive_type: TriangleList
         permutations:
-            - render_state: *app-template-render-state
+            - render_state: *{{ template_id }}-render-state
               render_pass_desc:
                   render_targets:
                       - format: R8g8b8a8Unorm
