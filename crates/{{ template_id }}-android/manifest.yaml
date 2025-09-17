@@ -1,4 +1,4 @@
-icon: ../../../resources/Icon-512.png
+# icon: ../../../resources/Icon-512.png
 
 android:
   manifest:
@@ -11,7 +11,7 @@ android:
       label: "{{ template_name }}"
 
   # Include validation layer dynamic libraries in the APK
-  runtime_libs: ["../../../vendor/android-Vulkan-ValidationLayers"]
+  # runtime_libs: ["../../../vendor/android-Vulkan-ValidationLayers"]
 
   debug:
     forward:
