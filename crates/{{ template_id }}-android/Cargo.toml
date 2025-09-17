@@ -10,5 +10,8 @@ version.workspace = true
 # Compile a dynamic "C" library that is called by Android's NativeActivity.
 crate-type = ["cdylib"]
 
-[target.'cfg(target_os = "android")'.dependencies]
-{{ template_id }} = { path = "../{{ template_id }}" }
+[dependencies]
+{{ template_id }}.workspace = true
+android-activity.workspace = true
+
+[build-dependencies]
