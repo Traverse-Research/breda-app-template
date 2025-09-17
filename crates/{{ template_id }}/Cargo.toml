@@ -3,6 +3,7 @@ breda.inherit = true
 breda-app-support.inherit = true
 clap.inherit = true
 anyhow.inherit = true
+android-activity.inherit = true
 
 [build-dependencies]
 breda-build.inherit = true
