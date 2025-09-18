@@ -2,11 +2,11 @@
 name = "{{ template_id }}"
 
 [dependencies]
-breda.inherit = true
-breda-app-support.inherit = true
-clap.inherit = true
-anyhow.inherit = true
-android-activity.inherit = true
+breda.workspace = true
+breda-app-support.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+android-activity.workspace = true
 
 [build-dependencies]
-breda-build.inherit = true
+breda-build.workspace = true
