@@ -1,3 +1,22 @@
+# jb-todo: how do we do permutations?
+# jb-todo: `desc` gets a bit hairy due to lack of proper defaults at the moment
+
+compute:
+    motion-blur:
+        cs:
+            filename: "{{ template_id }}::motion_blur.cs.hlsl"
+            entry_point: "main"
+    wireframe:
+        cs:
+            filename: "{{ template_id }}::wireframe.cs.hlsl"
+            entry_point: "main"
+
+    # Selection AABB debug
+    draw_selection_bounding_box:
+        cs:
+            filename: "{{ template_id }}::debug/draw_selection_bounding_box.hlsl"
+            entry_point: "main"
+
 x-default-blend-state: &default-blend-state
     src_color: One
     src_alpha: One
@@ -7,33 +26,37 @@ x-default-blend-state: &default-blend-state
     op_alpha: Add
     enable: false
 
-x-{{ template_id }}-depth-state: &{{ template_id }}-depth-state
-    depth_test_enable: false
+x-depth-test-enabled-writes-disabled: &depth-test-enabled-writes-disabled
+    depth_test_enable: true
     depth_write_enable: false
-    depth_func: Always
+    depth_func: Greater
     depth_bias: 0.0
     slope_scaled_depth_bias: 0.0
     depth_clamp: false
 
-x-{{ template_id }}-render-state: &{{ template_id }}-render-state
-    blend_states: [*default-blend-state]
-    cull_mode: None
-    conservative_raster: Disabled
-    depth: *{{ template_id }}-depth-state
+x-depth-test-disabled: &depth-test-disabled
+    depth_test_enable: false
+    depth_write_enable: false
+    depth_func: Greater
+    depth_bias: 0.0
+    slope_scaled_depth_bias: 0.0
+    depth_clamp: false
 
-raster:
-    {{ template_id }}-raytracer:
-        vs:
-            filename: "breda-gpu-shared::fullscreen_quad.vs.hlsl"
-            entry_point: "main"
-        ps:
-            filename: "{{ template_id }}::main.ps.hlsl"
-            entry_point: "main"
-        primitive_type: TriangleList
-        permutations:
-            - render_state: *{{ template_id }}-render-state
-              render_pass_desc:
-                  render_targets:
-                      - format: R8g8b8a8Unorm
-                        load_op: Load
-                        store_op: Store
+x-debug-tangents-render-state: &debug-tangents-render-state
+    blend_states: [*default-blend-state]
+    cull_mode: Front
+    depth: *depth-test-enabled-writes-disabled
+    conservative_raster: Disabled
+
+x-debug-tangents-render-pass-desc: &debug-tangents-render-pass-desc
+    depth_stencil_target:
+        mode: DepthStencilRenderTarget
+        format: D32Float
+        depth_load_op: Load
+        depth_store_op: Discard
+        stencil_load_op: Load
+        stencil_store_op: Discard
+    render_targets:
+        - format: R8g8b8a8Unorm
+          load_op: Load
+          store_op: Store
