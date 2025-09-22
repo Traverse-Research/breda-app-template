@@ -76,8 +76,6 @@ windows = { workspace = true, features = [
     "Win32_UI_WindowsAndMessaging",
     "Win32_UI_Input",
 ] }
-evolve-dxdiag.workspace = true
-evolve-wmi.workspace = true
 pelite.workspace = true
 
 [target.'cfg(not(any(target_os = "windows", target_os = "android")))'.dependencies]
@@ -96,8 +94,6 @@ cfg_aliases.workspace = true
 [features]
 default = ["development"]
 
-# Note: evolve-android has its own development/retail features which may need
-# a corresponding change in evolve-android/Cargo.toml.
 development = [
     "breda/development",
     # Add the highest tier feature that has all functionality, so that devs always have access to everything.
@@ -105,8 +101,6 @@ development = [
     "nrc",
 ]
 
-# Note: evolve-android has its own development/retail features which may need
-# a corresponding change in evolve-android/Cargo.toml.
 retail = [
     "breda/retail",
     "pre_cooked_assets",
@@ -130,9 +124,6 @@ professional = []
 
 # Run kiosk mode.
 kiosk_mode = []
-
-# Allow running NRC benchmarks
-nrc = ["evolve-highscore-api/nrc"]
 
 native_certs = ["breda/native-certs", "ureq/native-certs"]
 
