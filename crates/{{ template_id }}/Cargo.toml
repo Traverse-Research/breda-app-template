@@ -81,9 +81,6 @@ pelite.workspace = true
 [target.'cfg(not(any(target_os = "windows", target_os = "android")))'.dependencies]
 native-dialog.workspace = true
 
-[target.'cfg(windows)'.dependencies]
-igcl.workspace = true
-
 [target.'cfg(target_os = "linux")'.dependencies]
 gtk.workspace = true
 
