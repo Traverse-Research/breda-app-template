@@ -53,9 +53,6 @@ urlencoding.workspace = true
 webbrowser.workspace = true
 wry.workspace = true
 
-[dev-dependencies]
-insta.workspace = true
-
 [target.'cfg(target_os = "android")'.dependencies]
 android-activity.workspace = true
 android-intent.workspace = true
@@ -95,7 +92,6 @@ development = [
     "breda/development",
     # Add the highest tier feature that has all functionality, so that devs always have access to everything.
     "professional",
-    "nrc",
 ]
 
 retail = [
