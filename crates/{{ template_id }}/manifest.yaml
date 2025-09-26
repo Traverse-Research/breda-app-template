@@ -6,7 +6,7 @@ publish:
       Default:
         vdf_source: "./steam/windows.vdf"
         platform: Windows
-        arch: x64
+        arch: X64
         description: "Look out the windows"
 
         # The working directory will always be the local crate root
@@ -15,7 +15,7 @@ publish:
       SteamDeck:
         vdf_source: "./steam/linux.vdf"
         platform: Linux
-        arch: x64
+        arch: X64
         description: "I use Arch by the way"
 
         # Sometimes you might want to get binaries from another directory
