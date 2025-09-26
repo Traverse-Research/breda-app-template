@@ -2,9 +2,6 @@
 name = "{{ template_id }}"
 
 [dependencies]
-breda.workspace = true
-breda-app-support.workspace = true
-clap.workspace = true
 anyhow.workspace = true
 
 [build-dependencies]
