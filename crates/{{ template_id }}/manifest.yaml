@@ -1,7 +1,6 @@
 steam:
   login:
-    !Token
-      - "shh... This is secret"
+    !Token "shh... This is secret"
   targets:
     Default:
       vdf_source: "./steam/windows.vdf"
