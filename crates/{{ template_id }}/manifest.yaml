@@ -1,21 +1,22 @@
-steam:
-  login:
-    !Token "shh... This is secret"
-  targets:
-    Default:
-      vdf_source: "./steam/windows.vdf"
-      platform: Windows
-      arch: x64
-      description: "Look out the windows"
+publish:
+  steam:
+    login:
+      !Token "shh... This is secret"
+    targets:
+      Default:
+        vdf_source: "./steam/windows.vdf"
+        platform: Windows
+        arch: x64
+        description: "Look out the windows"
 
-      # The working directory will always be the local crate root
-      # If you need to access the target folder, it will be in the workspace root
-      binary_dir: "../../target/bonk/debug/windows/x64"
-    SteamDeck:
-      vdf_source: "./steam/linux.vdf"
-      platform: Linux
-      arch: x64
-      description: "I use Arch by the way"
+        # The working directory will always be the local crate root
+        # If you need to access the target folder, it will be in the workspace root
+        binary_dir: "../../target/bonk/debug/windows/x64"
+      SteamDeck:
+        vdf_source: "./steam/linux.vdf"
+        platform: Linux
+        arch: x64
+        description: "I use Arch by the way"
 
-      # Sometimes you might want to get binaries from another directory
-      binary_dir: "../../target/bonk/debug/linux/debug/x64"
+        # Sometimes you might want to get binaries from another directory
+        binary_dir: "../../target/bonk/debug/linux/debug/x64"
