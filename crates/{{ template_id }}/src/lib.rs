@@ -283,7 +283,7 @@ pub fn internal_main(
                     QueueSubmitInfo::swapchain_only_sync(swapchain_sync)
                         .with_render_graph_signal_fence(signal_fence),
                 );
-                let present_status = swapchain.present(&queue, present_index, &swapchain_sync);
+                let present_status = swapchain.present(&queue, present_index, swapchain_sync);
                 event_receiver.with_status(present_status);
             }
 
