@@ -19,7 +19,6 @@ fn main() {
     let mut win_res =
         breda_build::windows_resource::WindowsResource::new(&breda_build::ProductInfo::default());
     win_res.set_icon(default_icon_path);
-    win_res.set_manifest(include_str!("assets/resources/windows/evolve.manifest"));
 
     breda_build::Context::new()
         .windows_resource(win_res)
