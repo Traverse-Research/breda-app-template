@@ -28,6 +28,8 @@ publish:
       !Token "{{ template_id }}"
     artifact_id:
       !EnvVar "EPIC_ARTIFACT_ID"
+    client_id:
+      !Token: "someid123"
     sandbox_id:
       !EnvVar "EPIC_SANDBOX_ID"
     client_secret:
