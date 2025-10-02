@@ -38,7 +38,7 @@ publish:
         # Required by epic, can be different from local build platform
         platform_name: "Windows"
         app_launch: "./{{ template_id }}.exe"
-        platform: windows
+        platform: Windows
         arch: X65
         description: It's unreal how epic this build is
         # No need for binary dir, the default can works
