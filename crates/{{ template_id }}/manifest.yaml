@@ -56,7 +56,7 @@ publish:
       !Token password123
     targets:
       Default:
-        protuct_id:
+        product_id:
           !Token {{ template_id }}
         flight_id:
           !Token someid123
