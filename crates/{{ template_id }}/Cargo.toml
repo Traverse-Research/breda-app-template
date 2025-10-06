@@ -12,18 +12,32 @@ version.workspace = true
 breda = { workspace = true, default-features = false, features = ["runtime_only_current_platform"] }
 breda-app-support.workspace = true
 
-adlx.workspace = true
+adlx = { version = "0.0.0-alpha.1" }
+named-lock = { git = "https://github.com/Traverse-Research/named-lock.git", rev = "821737c", default-features = false }
+nvapi-sys = { git = "https://github.com/Traverse-Research/nvapi-rs.git", rev = "ec3c62e", default-features = false, features = [
+    "serde",
+] }
+egui_commonmark = { version = "0.16", default-features = false, features = [
+    "macros",
+    "pulldown_cmark",
+] }
+tokio = { version = "1.32.0", default-features = true, features = ["net", "rt-multi-thread", "sync", "time"], optional = true }
+discord-sdk = { version = "0.3.8", optional = true }
+directories = { version = "6.0.0" }
+sha2 = { version = "0.10.8" }
+qrcode = { version = "0.14", default-features = false }
+rust-i18n = { version = "3.1.5", default-features = false }
+sanitize-filename = { version = "0.4.0", default-features = false }
+tracing = { version = "0.1", default-features = false }
+wry = { version = "0.51" }
+
 anyhow.workspace = true
 chrono.workspace = true
 clap.workspace = true
 crossbeam-channel.workspace = true
 csv.workspace = true
-discord-sdk = { workspace = true, optional = true }
-directories.workspace = true
 dolly.workspace = true
-tokio = { workspace = true, optional = true }
 egui-phosphor.workspace = true
-egui_commonmark.workspace = true
 egui_extras.workspace = true
 enum-map.workspace = true
 glam.workspace = true
@@ -31,39 +45,30 @@ image.workspace = true
 log.workspace = true
 log-once.workspace = true
 mirror-mirror.workspace = true
-named-lock.workspace = true
-nvapi-sys.workspace = true
 parking_lot.workspace = true
 puffin_egui.workspace = true
-qrcode.workspace = true
 rand_core.workspace = true
 rand_pcg.workspace = true
-rust-i18n.workspace = true
-sanitize-filename.workspace = true
 sentry.workspace = true
 serde.workspace = true
 serde_json.workspace = true
-sha2.workspace = true
 thiserror.workspace = true
 time.workspace = true
-tracing-subscriber.workspace = true
-tracing.workspace = true
 ureq.workspace = true
 urlencoding.workspace = true
 webbrowser.workspace = true
-wry.workspace = true
 
 [target.'cfg(target_os = "android")'.dependencies]
 android-activity.workspace = true
-android-intent.workspace = true
-jni.workspace = true
-shlex.workspace = true
+android-intent = { git = "https://github.com/Traverse-Research/android-intent", rev = "41bcbbb", default-features = false }
+jni = { version = "0.21.1", default-features = false }
+shlex = { version = "1", default-features = false }
 
 [target.'cfg(any(all(target_os = "windows", target_arch = "x86_64"), target_os = "linux", target_os = "darwin"))'.dependencies]
-steamworks.workspace = true
+steamworks = { version = "0.11.0", default-features = false }
 
 [target.'cfg(not(target_os = "macos"))'.dependencies]
-rpmalloc.workspace = true
+rpmalloc = { version = "0.2.2", default-features = false }
 
 [target.'cfg(target_os = "windows")'.dependencies]
 windows = { workspace = true, features = [
@@ -73,13 +78,13 @@ windows = { workspace = true, features = [
     "Win32_UI_WindowsAndMessaging",
     "Win32_UI_Input",
 ] }
-pelite.workspace = true
+pelite = { version = "0.10.0", default-features = false, features = ["mmap"] }
 
 [target.'cfg(not(any(target_os = "windows", target_os = "android")))'.dependencies]
-native-dialog.workspace = true
+native-dialog = { git = "https://github.com/Traverse-Research/native-dialog-rs.git", rev = "56bca7a" }
 
 [target.'cfg(target_os = "linux")'.dependencies]
-gtk.workspace = true
+gtk = { version = "0.18", default-features = false } # Matches webkit2gtk
 
 [build-dependencies]
 breda-build.workspace = true
