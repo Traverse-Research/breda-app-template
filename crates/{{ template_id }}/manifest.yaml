@@ -45,22 +45,22 @@ publish:
         description: It's unreal how epic this build is
         # No need for binary dir, the default works
   
-  msstore:
-    tennant_id:
-      !Token Traverse
-    seller_id:
-      !Token Traverse
-    client_id:
-      !Token Traverse
-    client_secret:
-      !Token password123
-    targets:
-      Default:
-        product_id:
-          !Token {{ template_id }}
-        flight_id:
-          !Token someid123
-        publish_type: Simple
-        platform: Windows
-        arch: X64
-        description: Pay the bill at the gates
+  # msstore:
+  #   tennant_id:
+  #     !Token Traverse
+  #   seller_id:
+  #     !Token Traverse
+  #   client_id:
+  #     !Token Traverse
+  #   client_secret:
+  #     !Token password123
+  #   targets:
+  #     Default:
+  #       product_id:
+  #         !Token {{ template_id }}
+  #       flight_id:
+  #         !Token someid123
+  #       publish_type: Simple
+  #       platform: Windows
+  #       arch: X64
+  #       description: Pay the bill at the gates
