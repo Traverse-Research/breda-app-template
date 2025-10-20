@@ -1,7 +1,5 @@
 publish:
   steam:
-    login:
-      !Token shh... This is secret
     targets:
       Default:
         vdf_source: ./steam/windows.vdf
@@ -22,18 +20,6 @@ publish:
         binary_dir: ../../target/bonk/debug/linux/x64
   
   epic:
-    organization_id:
-      !Token Traverse123
-    product_id:
-      !Token {{ template_id }}
-    artifact_id:
-      !EnvVar EPIC_ARTIFACT_ID
-    client_id:
-      !Token someid123
-    sandbox_id:
-      !EnvVar EPIC_SANDBOX_ID
-    client_secret:
-      !File ./epic/EpicLoginSecret.txt
     targets:
       Default:
         cloud_dir: /
@@ -46,20 +32,8 @@ publish:
         # No need for binary dir, the default works
   
   msstore:
-    tennant_id:
-      !Token Traverse
-    seller_id:
-      !Token Traverse
-    client_id:
-      !Token Traverse
-    client_secret:
-      !Token password123
     targets:
       Default:
-        product_id:
-          !Token {{ template_id }}
-        flight_id:
-          !Token someid123
         publish_type: Simple
         platform: Windows
         arch: X64
