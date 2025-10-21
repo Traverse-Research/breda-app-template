@@ -19,7 +19,7 @@ publish:
         # Sometimes you might want to get binaries from another directory
         binary_dir: ../../target/bonk/debug/linux/x64
   
-  epic:
+  epic_games_store:
     targets:
       Default:
         cloud_dir: /
