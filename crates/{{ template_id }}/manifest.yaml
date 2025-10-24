@@ -11,7 +11,7 @@ publish:
 
         # The working directory will always be the local crate root
         # If you need to access the target folder, it will be in the workspace root
-        binary_dir: ../../target/bonk/release/windows/x64
+        binary_dir: ../../target/bonk/debug/windows/x64
       SteamDeck:
         vdf_source: ./steam/linux.vdf
         platform: Linux
@@ -19,7 +19,7 @@ publish:
         description: I use Arch by the way
 
         # Sometimes you might want to get binaries from another directory
-        binary_dir: ../../target/bonk/release/linux/x64
+        binary_dir: ../../target/bonk/debug/linux/x64
   
   epic:
     organization_id:
