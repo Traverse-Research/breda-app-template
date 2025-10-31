@@ -44,5 +44,5 @@ publish:
       Default:
         arch: Arm64
         tracks:
-          - release: "latest"
-            track: "Public"
+          - release: latest
+            track: internal
