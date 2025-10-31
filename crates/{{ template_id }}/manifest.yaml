@@ -38,3 +38,11 @@ publish:
         platform: Windows
         arch: X64
         description: Pay the bill at the gates
+
+  play_store:
+    targets:
+      Default:
+        arch: Arm64
+        tracks:
+          - release: "latest"
+            track: "Public"
