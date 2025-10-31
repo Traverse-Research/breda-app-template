@@ -1,6 +1,9 @@
 [package]
 name = "{{ template_id }}"
 
+[lib]
+crate-type = ["rlib", "cdylib"]
+
 [dependencies]
 anyhow.workspace = true
 
