@@ -37,4 +37,5 @@ publish:
         publish_type: Simple
         arch: X64
         description: Pay the bill at the gates
-        msix: ./{{ template _id }}.msix
+        msix: ./{{ template_id }}.msix
+  
