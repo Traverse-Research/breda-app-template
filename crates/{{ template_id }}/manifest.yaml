@@ -39,3 +39,9 @@ publish:
         description: Pay the bill at the gates
         msix: ./{{ template_id }}.msix
   
+  apple_store:
+    targets:
+      Default:
+        platform: Macos
+        arch: Arm64
+        package: ./{{ template_id }}.pkg
