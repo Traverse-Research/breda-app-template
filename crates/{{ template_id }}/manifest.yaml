@@ -35,6 +35,7 @@ publish:
     targets:
       Default:
         publish_type: Simple
-        platform: Windows
         arch: X64
         description: Pay the bill at the gates
+        msix: ./{{ template_id }}.msix
+  
