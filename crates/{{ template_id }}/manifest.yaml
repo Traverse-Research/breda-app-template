@@ -44,4 +44,14 @@ publish:
       Default:
         platform: Macos
         arch: Arm64
-        package: ./{{ template_id }}.pkg
+        package: ./{{ template_id }}
+
+      # A complete bogus target for Windows. Would never pass through Apple's pipeline,
+      # but since we're not actually executing the command in the test, it's fine.
+      # Only tests that command generation for bonk, 
+      # and doesn't require us to somehow get a flat package from a macOS runner to the Windows machine.
+      Default_Windows:
+        platform: Macos
+        arch: X64
+        package: ./{{ template_id }}.msix
+        binary_dir: ../../target/bonk/release/windows/x64
