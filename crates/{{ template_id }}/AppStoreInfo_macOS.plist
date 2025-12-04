@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>product-metadata</key>
+	<dict>
+		<key>packages</key>
+		<array>
+			<dict>
+				<key>bundles</key>
+				<array>
+					<dict>
+						<key>CFBundleVersion</key>
+						<string>0.1.1</string>
+						<key>bundle-identifier</key>
+						<string>nl.traverseresearch.TestTheThing</string>
+						<key>platform-display-name</key>
+						<string>macOS App</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>
