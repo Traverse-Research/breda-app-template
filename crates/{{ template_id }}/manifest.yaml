@@ -10,6 +10,16 @@ publish:
         # The working directory will always be the local crate root
         # If you need to access the target folder, it will be in the workspace root
         binary_dir: ../../target/bonk/release/windows/x64
+
+      Default_macOS:
+        vdf_source: ./steam/windows.vdf
+        platform: Macos
+        arch: Arm64
+
+        # The working directory will always be the local crate root
+        # If you need to access the target folder, it will be in the workspace root
+        binary_dir: ../../target/bonk/release/macOS/Arm64
+
       SteamDeck:
         vdf_source: ./steam/linux.vdf
         platform: Linux
@@ -29,6 +39,15 @@ publish:
         platform: Windows
         arch: X64
         description: It's unreal how epic this build is
+        # No need for binary dir, the default works
+
+      Default_macOS:
+        cloud_dir: /
+        # Required by epic, can be different from local build platform
+        platform_name: macOS
+        app_launch: ./{{ template_id }}.dmg
+        platform: Macos
+        arch: Arm64
         # No need for binary dir, the default works
   
   msstore:
