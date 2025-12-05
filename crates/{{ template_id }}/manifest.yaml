@@ -44,7 +44,7 @@ publish:
       Default:
         platform: Macos
         arch: Arm64
-        package: ./{{ template_id }}
+        package: ./{{ template_id }}.dmg
 
       # A complete bogus target for Windows. Would never pass through Apple's pipeline,
       # but since we're not actually executing the command in the test, it's fine.
