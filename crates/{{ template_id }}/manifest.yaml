@@ -47,6 +47,7 @@ publish:
         publish_type: Simple
         arch: X64
         msix: ./{{ template_id }}.dmg
+        binary_dir: ../../target/bonk/release/macos/arm64
   
   apple_store:
     targets:
