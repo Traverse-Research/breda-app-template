@@ -38,17 +38,28 @@ publish:
         arch: X64
         description: Pay the bill at the gates
         msix: ./{{ template_id }}.msix
+
+      # A complete bogus target for macOS. Would never pass through MS Store's pipeline,
+      # but since we're not actually executing the command in the test, it's fine.
+      # Only tests the command generation for bonk, 
+      # and doesn't require us to somehow get an msix from a non-macOS runner to the macOS machine.
+      Default_macOS:
+        publish_type: Simple
+        arch: X64
+        msix: ./{{ template_id }}.dmg
   
   apple_store:
     targets:
       Default:
         platform: Macos
         arch: Arm64
+        # Technically illegal, since DMGs cannot be uploaded to the Apple Store, but works for testing
+        # if commands are generated correctly
         package: ./{{ template_id }}.dmg
 
       # A complete bogus target for Windows. Would never pass through Apple's pipeline,
       # but since we're not actually executing the command in the test, it's fine.
-      # Only tests that command generation for bonk, 
+      # Only tests the command generation for bonk, 
       # and doesn't require us to somehow get a flat package from a macOS runner to the Windows machine.
       Default_Windows:
         platform: Macos
