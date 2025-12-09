@@ -86,3 +86,17 @@ publish:
         arch: X64
         package: ./{{ template_id }}.msix
         binary_dir: ../../target/bonk/release/windows/x64
+
+  play_store:
+    targets:
+      nl.traverse_research.evolve:
+        platform: Android
+        arch: Arm64
+        # This is only an example, normally this would be an .aab, but it's easier to build apks for testing
+        aab_name: {{ template_id }}.apk
+        tracks:
+          - track: internal-testing
+            release: Evolve
+
+          - track: production
+            release: Evolve
