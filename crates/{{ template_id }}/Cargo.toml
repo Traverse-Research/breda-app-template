@@ -13,10 +13,12 @@ name = "{{ template_id }}"
 crate-type = ["rlib", "cdylib"]
 
 [dependencies]
+log.workspace = true
 breda.workspace = true
 breda-app-support.workspace = true
 clap.workspace = true
 anyhow.workspace = true
+android-activity.workspace = true
 
 [build-dependencies]
 breda-build.workspace = true
