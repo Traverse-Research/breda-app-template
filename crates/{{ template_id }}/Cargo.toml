@@ -18,6 +18,8 @@ breda.workspace = true
 breda-app-support.workspace = true
 clap.workspace = true
 anyhow.workspace = true
+
+[target.'cfg(target_os = "android")'.dependencies]
 android-activity.workspace = true
 
 [build-dependencies]
