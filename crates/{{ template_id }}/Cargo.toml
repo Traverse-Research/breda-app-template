@@ -1,11 +1,26 @@
 [package]
 name = "{{ template_id }}"
 
+[lib]
+# Rename to prevent a filename clash for `{{ template_id }}.pdb` for `{{ template_id }}.exe`. There's
+# typically no need to build an `{{ template_id }}.dll` on Windows, but `cargo` does that
+# by default unless users specify `cargo b --bin(s)` in their commands.
+# name = "{{ template_id }}_lib"
+
+# Compile a dynamic "C" library (cdylib) that is called by Android's
+# NativeActivity.  The rlib exists for the main binary/executable to also
+# compile against our crate.
+crate-type = ["rlib", "cdylib"]
+
 [dependencies]
+log.workspace = true
 breda.workspace = true
 breda-app-support.workspace = true
 clap.workspace = true
 anyhow.workspace = true
+
+[target.'cfg(target_os = "android")'.dependencies]
+android-activity.workspace = true
 
 [build-dependencies]
 breda-build.workspace = true
