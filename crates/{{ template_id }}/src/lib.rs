@@ -25,6 +25,9 @@ use breda::{
 };
 use clap::Parser;
 
+#[cfg(target_os = "android")]
+pub mod entry;
+
 /// This app serves as an application template for other apps
 #[derive(Default, Parser)]
 pub struct CommandlineOpts {
