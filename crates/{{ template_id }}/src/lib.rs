@@ -212,13 +212,13 @@ pub fn internal_main(
                     &streaming_system.get_shader_db_cid()?,
                 );
 
+                let shader_handle = shader_db.downgrade().upgrade().unwrap();
                 let shader_db = streaming_system
                     .assets
-                    .borrow::<AssetsShaderDatabase>(shader_db.handle())
+                    .borrow::<AssetsShaderDatabase>(&shader_handle)
                     .unwrap();
 
-                let mut render_graph =
-                    RenderGraph::new(render_graph_persistent_store, swapchain.size());
+                let mut render_graph = RenderGraph::new(render_graph_persistent_store);
 
                 let present_image = swapchain.present_image(present_index);
                 let present_image_rg = render_graph.import_texture(&present_image);
