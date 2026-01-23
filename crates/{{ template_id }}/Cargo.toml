@@ -1,11 +1,11 @@
 [package]
 name = "{{ template_id }}"
+authors = ["Test"]
+version = "0.1.0"
+edition = "2024"
 
 [dependencies]
-breda.workspace = true
-breda-app-support.workspace = true
-clap.workspace = true
-anyhow.workspace = true
+ring = "0.17.14"
+basis-universal = "0.3.1"
 
-[build-dependencies]
-breda-build.workspace = true
+[workspace]
