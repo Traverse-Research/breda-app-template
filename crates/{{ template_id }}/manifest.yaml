@@ -89,11 +89,12 @@ publish:
 
   vivo_store:
     targets:
-      nl.traverseresearch.testapp:
+      Default:
         platform: Android
         arch: Arm64
         binary_dir: ../../target/bonk/release/android
         apk_name: {{ template_id }}.apk
+        target_package: nl.traverseresearch.testapp
 
 android:
   manifest:
