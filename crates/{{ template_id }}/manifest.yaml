@@ -86,3 +86,25 @@ publish:
         arch: X64
         package: ./{{ template_id }}.msix
         binary_dir: ../../target/bonk/release/windows/x64
+
+  vivo_store:
+    targets:
+      Default:
+        platform: Android
+        arch: Arm64
+        binary_dir: ../../target/bonk/release/android
+        apk_name: {{ template_id }}.apk
+        target_package: nl.traverseresearch.testapp
+
+android:
+  manifest:
+    # Should be replaced for every upload on play store
+    version_code: 14482003
+    package: nl.traverseresearch.testapp
+    compile_sdk_version: 35
+    platform_build_version_code: 35
+
+    sdk:
+      min_sdk_version: 34
+      target_sdk_version: 35
+
