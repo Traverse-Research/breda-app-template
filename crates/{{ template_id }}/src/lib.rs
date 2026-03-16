@@ -135,6 +135,7 @@ pub fn internal_main(
                     geometry_flags: GeometryFlags::empty(),
                     build_location: AccelerationStructureBuildLocation::Device,
                 },
+                None,
             );
 
             let mat4x3 = [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0];
