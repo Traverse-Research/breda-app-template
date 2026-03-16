@@ -18,7 +18,7 @@ publish:
 
         # The working directory will always be the local crate root
         # If you need to access the target folder, it will be in the workspace root
-        binary_dir: ../../target/bonk/release/macOS/Arm64
+        binary_dir: ../../target/bonk/release/macos/arm64
 
       SteamDeck:
         vdf_source: ./steam/linux.vdf
